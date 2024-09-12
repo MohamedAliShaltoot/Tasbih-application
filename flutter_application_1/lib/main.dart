@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/custom)button_text+widget.dart';
+import 'package:flutter_application_1/custom_button_text_widget.dart';
 import 'package:flutter_application_1/custom_text_widget.dart';
 
 void main() {
@@ -33,15 +33,14 @@ class _MyAppState extends State<MyApp> {
               rr = 0;
             });
           },
-          child: const Text(
-            " اعاده",
-            style: TextStyle(color: Colors.black, fontSize: 15),
-          ),
+          child:const CustomBottonTextWIdget(text: "Reset", color: Colors.black,fontsize: 20,)
+          
+    
         ),
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 15, 86, 144),
+          backgroundColor: const Color.fromARGB(255, 227, 169, 70),
           title: const Text(
-            " تسبيح",
+            "Tasbih app",
             style: TextStyle(color: Colors.black, fontSize: 30),
           ),
         ),
@@ -178,27 +177,27 @@ class _MyAppState extends State<MyApp> {
                     ww++;
                   },
                   child: const CustomBottonTextWIdget(
-                    text: "سبحان الله",
+                    text: "سبحان الله", color: Colors.red,
                   )),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
                     qq++;
                   },
-                  child: const CustomBottonTextWIdget(text: " الحمد لله")),
+                  child: const CustomBottonTextWIdget(text: " الحمد لله", color: Colors.red,)),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
                     ee++;
                   },
                   child:
-                      const CustomBottonTextWIdget(text: " لا اله الا الله")),
+                      const CustomBottonTextWIdget(text: " لا اله الا الله", color: Colors.red,)),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
                     rr++;
                   },
-                  child: const CustomBottonTextWIdget(text: "  الله أكبر")),
+                  child: const CustomBottonTextWIdget(text: "  الله أكبر", color: Colors.red,)),
             ],
           ),
         ),

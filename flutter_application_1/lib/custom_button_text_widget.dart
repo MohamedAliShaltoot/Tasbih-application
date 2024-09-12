@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 
 class CustomBottonTextWIdget extends StatelessWidget {
   const CustomBottonTextWIdget({
-    super.key, required this.text,
+    super.key, required this.text, required this.color, this.fontsize=16,
   });
 final String text;
+final Color color;
+final double? fontsize;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(color: Color.fromARGB(255, 211, 12, 12)),
+      style:  TextStyle(color: color,fontSize: fontsize),
       textAlign: TextAlign.center,
     );
   }
 }
+
+// Color.fromARGB(255, 211, 12, 12)
