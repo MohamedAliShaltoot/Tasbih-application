@@ -40,7 +40,7 @@ floatingActionButton: FloatingActionButton(
 appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: const Text(" تسبيح",style: TextStyle(color: Colors.black,fontSize: 30),),
 ),
      body: Container(
-      color: Color.fromARGB(255, 16, 25, 106),
+      color: const Color.fromARGB(255, 16, 25, 106),
       width: 400,
       height: 700,
       padding: const EdgeInsets.all(10),
@@ -54,16 +54,16 @@ appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: co
       Expanded( flex: 2,child:Container(
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         decoration:  BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 8, 189, 20)),
+          border: Border.all(color: const Color.fromARGB(255, 8, 189, 20)),
           
-          color: Color.fromARGB(255, 24, 24, 27),
+          color: const Color.fromARGB(255, 24, 24, 27),
         ),
         width: 20,
         height: 100,
         child: Column(children: [
-       const Text(" سبحان الله ",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
-       SizedBox(height: 10,),
-       Text("$ww",style: TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
+       const CustomTextWidget(label: "سبحان الله",),
+       const SizedBox(height: 10,),
+       Text("$ww",style: const TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
         ],)
        
       ),
@@ -71,33 +71,34 @@ appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: co
       Expanded( flex: 2,child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         decoration:  BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 8, 189, 20)),
-          color: Color.fromARGB(255, 13, 13, 13),
+          border: Border.all(color: const Color.fromARGB(255, 8, 189, 20)),
+          color: const Color.fromARGB(255, 13, 13, 13),
         ),
         width: 20,
         height: 100,
         child: Column(children: [
-       const Text("الحمد لله",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
-       SizedBox(height: 10,),
-       Text("$qq",style: TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
+  const CustomTextWidget(label: "الحمد لله"),
+       const SizedBox(height: 10,),
+       Text("$qq",style: const TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
         ],) 
-        //const Text(" الحمد لله ",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
+      
       ),
       ),
       Expanded( flex: 2,child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         decoration:  BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 8, 189, 20)),
-          color: Color.fromARGB(255, 19, 19, 18),
+          border: Border.all(color: const Color.fromARGB(255, 8, 189, 20)),
+          color: const Color.fromARGB(255, 19, 19, 18),
         ),
         width: 20,
         height: 100,
         child: Column(children: [
-       const Text("  لا اله الا الله",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
-       SizedBox(height: 10,),
-       Text("$ee",style: TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
+          const CustomTextWidget(label: "  لا اله الا الله"),
+   
+       const SizedBox(height: 10,),
+       Text("$ee",style: const TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
         ],) 
-        //const Text(" لا اله الا الله ",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
+       
       ),
       ),
       
@@ -106,17 +107,18 @@ appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: co
         child:Container(
           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         decoration:  BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 8, 189, 20)),
-          color: Color.fromARGB(255, 22, 21, 21),
+          border: Border.all(color: const Color.fromARGB(255, 8, 189, 20)),
+          color: const Color.fromARGB(255, 22, 21, 21),
         ),
         width: 20,
         height: 100,
         child:  Column(children: [
-       const Text("  الله أكبر",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
-       SizedBox(height: 10,),
-       Text("$rr",style: TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
+          const CustomTextWidget(label: "  الله أكبر")
+       ,
+       const SizedBox(height: 10,),
+       Text("$rr",style: const TextStyle(color: Color.fromARGB(255, 226, 82, 5)),textAlign: TextAlign.center,)
         ],)
-        //const Text("  الله أكبر ",style: TextStyle(color: Colors.amber),textAlign: TextAlign.center,),
+        
       ), ),
       
       
@@ -124,53 +126,9 @@ appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: co
          ],
        ),
       
-       SizedBox(height: 120,),
-      
-      //  Row(
-      //    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //    children: [
-      // Expanded( flex: 2,child:Container(
-      //   decoration: const BoxDecoration(
-      //     color: Colors.amber,
-      //   ),
-      //   width: 20,
-      //   height: 100,
-      //   child: const Text(" sobhan alla "),
-      // ),
-      //  ),
-      // Expanded( flex: 2,child: Container(
-      //   decoration: const BoxDecoration(
-      //     color: Colors.amber,
-      //   ),
-      //   width: 20,
-      //   height: 100,
-      //   child: const Text(" Alhamd alla "),
-      // ),
-      // ),
-      // Expanded( flex: 2,child: Container(
-      //   decoration: const BoxDecoration(
-      //     color: Colors.amber,
-      //   ),
-      //   width: 20,
-      //   height: 100,
-      //   child: const Text(" laa elaha ela alla "),
-      // ),),
-      // Expanded(
-      //   flex: 2,
-      //   child:Container(
-      //   decoration: const BoxDecoration(
-      //     color: Colors.amber,
-      //   ),
-      //   width: 20,
-      //   height: 100,
-      //   child: const Text("  alla akkbar "),
-      // ), 
-      // ),
+       const SizedBox(height: 120,),
       
       
-      
-      //    ],
-      //  ),
            
            ElevatedButton(onPressed: (){
       setState(() {
@@ -207,5 +165,16 @@ appBar: AppBar(backgroundColor: const Color.fromARGB(255, 15, 86, 144),title: co
      ),
       ),
     );
+  }
+}
+
+class CustomTextWidget extends StatelessWidget {
+  const CustomTextWidget({
+    super.key, required this.label,
+  });
+final String label;
+  @override
+  Widget build(BuildContext context) {
+    return  Text(label,style: const TextStyle(color: Colors.amber),textAlign: TextAlign.center,);
   }
 }
