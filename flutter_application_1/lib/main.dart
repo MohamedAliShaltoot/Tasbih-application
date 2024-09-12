@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/custom_button_text_widget.dart';
-import 'package:flutter_application_1/custom_text_widget.dart';
+import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
+import 'package:flutter_application_1/customWidgets/custom_text_widget.dart';
+
 
 void main() {
   runApp(const MyApp());
