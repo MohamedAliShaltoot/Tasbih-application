@@ -46,8 +46,8 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           color: const Color.fromARGB(255, 16, 25, 106),
-          width: 400,
-          height: 700,
+          width: MediaQuery.of(context).size.width,
+          height:MediaQuery.of(context).size.height,
           padding: const EdgeInsets.all(10),
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.center,
