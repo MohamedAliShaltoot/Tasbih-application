@@ -14,23 +14,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int ww = 0;
-  int qq = 0;
-  int ee = 0;
-  int rr = 0;
+  int sobhan = 0;
+  int alhamd = 0;
+  int laaaelaha = 0;
+  int alla = 0;
 
   @override
   Widget build(BuildContext context) {
+    double widthScreen= MediaQuery.of(context).size.width;
+    double heightScreen= MediaQuery.of(context).size.height;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
-              ww = 0;
-              qq = 0;
-              ee = 0;
-              rr = 0;
+              sobhan = 0;
+               alhamd = 0;
+              laaaelaha = 0;
+              alla = 0;
             });
           },
           child:const CustomBottonTextWIdget(text: "Reset", color: Colors.black,fontsize: 20,)
@@ -46,12 +48,11 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           color: const Color.fromARGB(255, 16, 25, 106),
-          width: MediaQuery.of(context).size.width,
-          height:MediaQuery.of(context).size.height,
+          width: widthScreen,
+          height:heightScreen,
           padding: const EdgeInsets.all(10),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
+       
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                               height: 10,
                             ),
                             Text(
-                              "$ww",
+                              "$sobhan",
                               style: const TextStyle(
                                   color: Color.fromARGB(255, 226, 82, 5)),
                               textAlign: TextAlign.center,
@@ -104,7 +105,7 @@ class _MyAppState extends State<MyApp> {
                               height: 10,
                             ),
                             Text(
-                              "$qq",
+                              "$alhamd",
                               style: const TextStyle(
                                   color: Color.fromARGB(255, 226, 82, 5)),
                               textAlign: TextAlign.center,
@@ -131,7 +132,7 @@ class _MyAppState extends State<MyApp> {
                               height: 10,
                             ),
                             Text(
-                              "$ee",
+                              "$laaaelaha",
                               style: const TextStyle(
                                   color: Color.fromARGB(255, 226, 82, 5)),
                               textAlign: TextAlign.center,
@@ -158,7 +159,7 @@ class _MyAppState extends State<MyApp> {
                               height: 10,
                             ),
                             Text(
-                              "$rr",
+                              "$alla",
                               style: const TextStyle(
                                   color: Color.fromARGB(255, 226, 82, 5)),
                               textAlign: TextAlign.center,
@@ -174,7 +175,7 @@ class _MyAppState extends State<MyApp> {
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
-                    ww++;
+                   sobhan++;
                   },
                   child: const CustomBottonTextWIdget(
                     text: "سبحان الله", color: Colors.red,
@@ -182,20 +183,20 @@ class _MyAppState extends State<MyApp> {
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
-                    qq++;
+                     alhamd++;
                   },
                   child: const CustomBottonTextWIdget(text: " الحمد لله", color: Colors.red,)),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
-                    ee++;
+                    laaaelaha++;
                   },
                   child:
                       const CustomBottonTextWIdget(text: " لا اله الا الله", color: Colors.red,)),
               ElevatedButton(
                   onPressed: () {
                     setState(() {});
-                    rr++;
+                    alla++;
                   },
                   child: const CustomBottonTextWIdget(text: "  الله أكبر", color: Colors.red,)),
             ],
