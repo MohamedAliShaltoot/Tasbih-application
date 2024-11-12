@@ -11,7 +11,7 @@ final double? fontsize;
   Widget build(BuildContext context) {
     return Text(
       text,
-      style:  TextStyle(color: color,fontSize: fontsize),
+      style:  TextStyle(color: color,fontSize: fontsize,fontFamily: "ElMessiri-Bold"),
       textAlign: TextAlign.center,
     );
   }

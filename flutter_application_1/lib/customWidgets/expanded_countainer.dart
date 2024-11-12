@@ -11,7 +11,7 @@ Expanded ExpandedCountainerWidget(String textLabel,int counter) {
                         decoration: BoxDecoration(
                           border: Border.all(
                               color: const Color.fromARGB(255, 213, 200, 19)),
-                          color: const Color.fromARGB(255, 13, 13, 13),
+                          color: const Color.fromARGB(255, 14, 8, 3),
                         ),
                         width: 20,
                         height: 100,
@@ -24,6 +24,7 @@ Expanded ExpandedCountainerWidget(String textLabel,int counter) {
                             Text(
                               "$counter",
                               style: const TextStyle(
+                                fontFamily: "ElMessiri-Bold",
                                   color: Color.fromARGB(255, 250, 234, 4)),
                               textAlign: TextAlign.center,
                             )

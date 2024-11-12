@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
-import 'package:flutter_application_1/customWidgets/custom_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
-import 'package:flutter_application_1/provider.dart';
-import 'package:provider/provider.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,6 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton: FloatingActionButton(
+        
+        focusElevation: 80,
+        elevation: 40,
+        splashColor: Colors.orange,
+        focusColor: Colors.green,
+        hoverColor: const Color.fromARGB(255, 2, 238, 69),
+        tooltip: "Rest Counters",
           backgroundColor: Colors.amber,
           onPressed: () {
             setState(() {
@@ -43,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color.fromARGB(255, 227, 169, 70),
         title: const Text(
           "Tasbih app",
-          style: TextStyle(color: Colors.black, fontSize: 30),
+          style: TextStyle(color: Colors.black, fontSize: 30,fontFamily: "ElMessiri-Bold"),
         ),
         actions: const [
           Icon(Icons.menu, size: 40, grade: 100, color: Colors.black)
@@ -54,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           color: const Color.fromARGB(255, 32, 35, 50),
           width: widthScreen,
           height: heightScreen,
-          padding: const EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.only(top: 1),
           child: Column(
             children: [
               Row(
@@ -62,14 +67,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   ExpandedCountainerWidget("سبحان الله", sobhan),
                   ExpandedCountainerWidget("الحمد لله", alhamd),
-                  ExpandedCountainerWidget("  لا اله الا الله", laaaelaha),
+                  ExpandedCountainerWidget("  لا اله الا الله",laaaelaha),
                   ExpandedCountainerWidget("  الله أكبر", alla),
                 ],
               ),
               const SizedBox(
                 height: 120,
               ),
+              
               ElevatedButton(
+                 style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                ),
                 onPressed: () {
                   setState(() {});
                   sobhan++;
@@ -83,13 +92,17 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
+             // CustomElevatedButton(alhamd,"الحمد لله"),
               ElevatedButton(
+                 style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                ),
                 onPressed: () {
                   setState(() {});
-                  alhamd++;
+                 alhamd++;
                 },
                 child: const CustomBottonTextWIdget(
-                  text: " الحمد لله",
+                  text: "الحمد لله",
                   color: Color.fromARGB(255, 19, 13, 2),
                   fontsize: 30,
                 ),
@@ -98,7 +111,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 25,
               ),
               ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                ),
                 onPressed: () {
+                  
                   setState(() {});
                   laaaelaha++;
                 },
@@ -111,21 +128,47 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {});
-                  alla++;
-                },
-                child: const CustomBottonTextWIdget(
-                  text: "  الله أكبر",
-                  color: Color.fromARGB(255, 19, 13, 2),
-                  fontsize: 30,
-                ),
-              ),
+ ElevatedButton(
+                    style: const ButtonStyle(
+                     backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                   ),
+                   onPressed: () {
+                    
+                     setState(() {});
+                     alla++;
+                   },
+                   child: const CustomBottonTextWIdget(
+                     text: "  الله أكبر",
+                     color: Color.fromARGB(255, 19, 13, 2),
+                     fontsize: 30,
+                   ),
+                 ),
+
+
             ],
           ),
         ),
       ),
     );
   }
+
+  // ignore: non_constant_identifier_names
+  ElevatedButton CustomElevatedButton(int counter,String text) {
+    return ElevatedButton(
+               style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+              ),
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              child:  CustomBottonTextWIdget(
+                text:text,
+                color: const Color.fromARGB(255, 19, 13, 2),
+                fontsize: 30,
+              ),
+            );
+  }
 }
+

@@ -8,6 +8,6 @@ final String label;
 final double? fontsize;
   @override
   Widget build(BuildContext context) {
-    return  Text(label,style:  TextStyle(color: Colors.amber,fontSize:fontsize),textAlign: TextAlign.center,);
+    return  Text(label,style:  TextStyle(color: Colors.amber,fontSize:fontsize,fontFamily: "ElMessiri-Bold"),textAlign: TextAlign.center,);
   }
 }
