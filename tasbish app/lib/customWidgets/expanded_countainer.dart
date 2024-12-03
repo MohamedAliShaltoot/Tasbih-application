@@ -19,12 +19,12 @@ Expanded ExpandedCountainerWidget(String textLabel,int counter) {
                           children: [
                              CustomTextWidget(label:textLabel),
                             const SizedBox(
-                              height: 25,
+                              height: 10,
                             ),
                             Text(
                               "$counter",
                               style: const TextStyle(
-                                fontFamily: "ElMessiri-Bold",
+                                
                                   color: Color.fromARGB(255, 250, 234, 4)),
                               textAlign: TextAlign.center,
                             )

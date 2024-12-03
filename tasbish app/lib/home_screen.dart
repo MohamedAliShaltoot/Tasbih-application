@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color.fromARGB(255, 227, 169, 70),
         title: const Text(
           "Tasbih app",
-          style: TextStyle(color: Colors.black, fontSize: 30,fontFamily: "ElMessiri-Bold"),
+          style: TextStyle(color: Colors.black, fontSize: 30),
         ),
         actions: const [
           Icon(Icons.menu, size: 40, grade: 100, color: Colors.black)
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   ExpandedCountainerWidget("سبحان الله", sobhan),
                   ExpandedCountainerWidget("الحمد لله", alhamd),
-                  ExpandedCountainerWidget("  لا اله الا الله",laaaelaha),
+                  ExpandedCountainerWidget("لا اله الاالله",laaaelaha),
                   ExpandedCountainerWidget("  الله أكبر", alla),
                 ],
               ),
