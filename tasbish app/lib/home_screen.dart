@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
-
+import 'package:flutter_application_1/show_snack_bar.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,13 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton: FloatingActionButton(
-        
-        focusElevation: 80,
-        elevation: 40,
-        splashColor: Colors.orange,
-        focusColor: Colors.green,
-        hoverColor: const Color.fromARGB(255, 2, 238, 69),
-        tooltip: "Rest Counters",
+          focusElevation: 80,
+          elevation: 40,
+          splashColor: Colors.orange,
+          focusColor: Colors.green,
+          hoverColor: const Color.fromARGB(255, 2, 238, 69),
+          tooltip: "Rest Counters",
           backgroundColor: Colors.amber,
           onPressed: () {
             setState(() {
@@ -45,13 +45,24 @@ class _HomeScreenState extends State<HomeScreen> {
             fontsize: 20,
           )),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 227, 169, 70),
-        title: const Text(
-          "Tasbih app",
-          style: TextStyle(color: Colors.black, fontSize: 30),
+        backgroundColor: Colors.orange,
+        title: Shimmer.fromColors(
+          period: const Duration(seconds: 4),
+           baseColor: const Color.fromARGB(255, 31, 28, 28),
+    highlightColor: const Color.fromARGB(255, 138, 124, 5),
+          child: const Text(
+            "Tasbih app",
+            style: TextStyle( fontSize: 30),
+          ),
         ),
-        actions: const [
-          Icon(Icons.menu, size: 40, grade: 100, color: Colors.black)
+        actions: [
+          IconButton(
+            onPressed: () {
+              final snakBar = ShowSnackBar(context);
+              ScaffoldMessenger.of(context).showSnackBar(snakBar);
+            },
+            icon: const Icon(Icons.menu),
+          )
         ],
       ),
       body: SafeArea(
@@ -67,17 +78,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   ExpandedCountainerWidget("سبحان الله", sobhan),
                   ExpandedCountainerWidget("الحمد لله", alhamd),
-                  ExpandedCountainerWidget("لا اله الاالله",laaaelaha),
+                  ExpandedCountainerWidget("لا اله الاالله", laaaelaha),
                   ExpandedCountainerWidget("  الله أكبر", alla),
                 ],
               ),
               const SizedBox(
                 height: 120,
               ),
-              
+
               ElevatedButton(
-                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
                 ),
                 onPressed: () {
                   setState(() {});
@@ -92,14 +104,15 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
-             // CustomElevatedButton(alhamd,"الحمد لله"),
+              // CustomElevatedButton(alhamd,"الحمد لله"),
               ElevatedButton(
-                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
                 ),
                 onPressed: () {
                   setState(() {});
-                 alhamd++;
+                  alhamd++;
                 },
                 child: const CustomBottonTextWIdget(
                   text: "الحمد لله",
@@ -112,10 +125,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ElevatedButton(
                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
                 ),
                 onPressed: () {
-                  
                   setState(() {});
                   laaaelaha++;
                 },
@@ -128,23 +141,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
- ElevatedButton(
-                    style: const ButtonStyle(
-                     backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
-                   ),
-                   onPressed: () {
-                    
-                     setState(() {});
-                     alla++;
-                   },
-                   child: const CustomBottonTextWIdget(
-                     text: "  الله أكبر",
-                     color: Color.fromARGB(255, 19, 13, 2),
-                     fontsize: 30,
-                   ),
-                 ),
-
-
+              ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
+                ),
+                onPressed: () {
+                  setState(() {});
+                  alla++;
+                },
+                child: const CustomBottonTextWIdget(
+                  text: "  الله أكبر",
+                  color: Color.fromARGB(255, 19, 13, 2),
+                  fontsize: 30,
+                ),
+              ),
             ],
           ),
         ),
@@ -153,22 +164,22 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // ignore: non_constant_identifier_names
-  ElevatedButton CustomElevatedButton(int counter,String text) {
+  ElevatedButton CustomElevatedButton(int counter, String text) {
     return ElevatedButton(
-               style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>( Color.fromARGB(255, 227, 169, 70)),
-              ),
-              onPressed: () {
-                setState(() {
-                  counter++;
-                });
-              },
-              child:  CustomBottonTextWIdget(
-                text:text,
-                color: const Color.fromARGB(255, 19, 13, 2),
-                fontsize: 30,
-              ),
-            );
+      style: const ButtonStyle(
+        backgroundColor:
+            MaterialStatePropertyAll<Color>(Color.fromARGB(255, 227, 169, 70)),
+      ),
+      onPressed: () {
+        setState(() {
+          counter++;
+        });
+      },
+      child: CustomBottonTextWIdget(
+        text: text,
+        color: const Color.fromARGB(255, 19, 13, 2),
+        fontsize: 30,
+      ),
+    );
   }
 }
-
