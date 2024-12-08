@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_screen.dart';
+import 'package:flutter_application_1/provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const TasbishApp());
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) => IncrementCountersProvider(),
+      child: const TasbishApp()));
 }
+
 class TasbishApp extends StatelessWidget {
   const TasbishApp({super.key});
 
@@ -15,5 +20,3 @@ class TasbishApp extends StatelessWidget {
     );
   }
 }
-
-

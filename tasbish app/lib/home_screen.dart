@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
+import 'package:flutter_application_1/show_dialog.dart';
 import 'package:flutter_application_1/show_snack_bar.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -46,13 +47,16 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Shimmer.fromColors(
-          period: const Duration(seconds: 4),
-           baseColor: const Color.fromARGB(255, 31, 28, 28),
-    highlightColor: const Color.fromARGB(255, 138, 124, 5),
-          child: const Text(
-            "Tasbih app",
-            style: TextStyle( fontSize: 30),
+        title: InkWell(
+          onTap: () { showAlertDialog(context); },
+          child: Shimmer.fromColors(
+            period: const Duration(seconds: 4),
+             baseColor: const Color.fromARGB(255, 31, 28, 28),
+              highlightColor: const Color.fromARGB(255, 138, 124, 5),
+            child: const Text(
+              "Tasbih app",
+              style: TextStyle( fontSize: 30),
+            ),
           ),
         ),
         actions: [
@@ -76,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  
                   ExpandedCountainerWidget("سبحان الله", sobhan),
                   ExpandedCountainerWidget("الحمد لله", alhamd),
                   ExpandedCountainerWidget("لا اله الاالله", laaaelaha),
@@ -101,6 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontsize: 30,
                 ),
               ),
+              
               const SizedBox(
                 height: 25,
               ),
