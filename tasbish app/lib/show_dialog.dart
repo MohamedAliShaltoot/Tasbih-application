@@ -6,7 +6,7 @@ void showAlertDialog(context) => showDialog(context: context, builder: (context)
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
   backgroundColor: Colors.white,
   elevation: 14,
-  icon: const Icon(Icons.error,color: Colors.orange,size: 40,),
+  //icon: const Icon(Icons.error,color: Colors.orange,size: 40,),
           title: const Text('Information',
             style: TextStyle(color: Colors.orange,
               fontWeight: FontWeight.bold)),
@@ -15,18 +15,19 @@ void showAlertDialog(context) => showDialog(context: context, builder: (context)
           ),
           actions: [
             
-            ElevatedButton(
+            // ElevatedButton(
             
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                  Colors.orange)
-              ),
-              onPressed: () {  
-              Navigator.pop(context);
-            },
-            child: const Text('Confirm',
-            style: TextStyle(color: Colors.black,
-              fontWeight: FontWeight.bold)),),
+            //   style: ButtonStyle(
+            //     backgroundColor: MaterialStateProperty.all<Color>(
+            //       Colors.orange)
+            //   ),
+            //   onPressed: () {  
+            //   Navigator.pop(context);
+            // },
+            // child: const Text('Confirm',
+            // style: TextStyle(color: Colors.black,
+            //   fontWeight: FontWeight.bold)),
+            //   ),
 ElevatedButton(
   style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
