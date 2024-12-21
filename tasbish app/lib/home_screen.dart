@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
@@ -29,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 40,
           splashColor: Colors.orange,
           focusColor: Colors.green,
-          hoverColor: const Color.fromARGB(255, 2, 238, 69),
+         // hoverColor: const Color.fromARGB(255, 2, 238, 69),
           tooltip: "Rest Counters",
           backgroundColor: Colors.amber,
           onPressed: () {
@@ -48,7 +51,21 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
         title: InkWell(
-          onTap: () { showAlertDialog(context); },
+          onTap: () { 
+AwesomeDialog(
+            context: context,
+            dialogType: DialogType.info,
+            animType: AnimType.rightSlide,
+            title: 'Dialog Title',
+            desc: 'My name is Mohamed Ali "The Developer" ',
+            btnCancelOnPress: () {},
+            btnOkOnPress: () {},
+            ).show();
+
+
+            
+            //showAlertDialog(context); ----> add package instead of this
+             },
           child: Shimmer.fromColors(
             period: const Duration(seconds: 4),
              baseColor: const Color.fromARGB(255, 31, 28, 28),
@@ -93,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               ElevatedButton(
                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(
+                  backgroundColor: WidgetStatePropertyAll<Color>(
                       Color.fromARGB(255, 227, 169, 70)),
                 ),
                 onPressed: () {
