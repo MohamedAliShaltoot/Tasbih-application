@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_screen.dart';
+
 import 'package:flutter_application_1/provider.dart';
+import 'package:flutter_application_1/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class TasbishApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
