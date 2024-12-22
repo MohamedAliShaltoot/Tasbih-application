@@ -4,7 +4,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
-import 'package:flutter_application_1/show_dialog.dart';
+//import 'package:flutter_application_1/show_dialog.dart';
 import 'package:flutter_application_1/show_snack_bar.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -20,7 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int alhamd = 0;
   int laaaelaha = 0;
   int alla = 0;
+  
 
+
+  
   @override
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.sizeOf(context).width;

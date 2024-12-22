@@ -1,5 +1,8 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_text_widget.dart';
+
+// ignore: non_constant_identifier_names
 
 // ignore: non_constant_identifier_names
 Expanded ExpandedCountainerWidget(String textLabel, int counter) {
@@ -19,13 +22,22 @@ Expanded ExpandedCountainerWidget(String textLabel, int counter) {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            "$counter",
-            style: const TextStyle(color: Color.fromARGB(255, 250, 234, 4)),
-            textAlign: TextAlign.center,
-          ),
+
+           AnimatedFlipCounter(
+            value: counter,
+            duration: const Duration(seconds: 1),
+            curve: Curves.linear,
+           ),
+          // Text(
+          //   "$counter",
+          //   style: const TextStyle(color: Color.fromARGB(255, 250, 234, 4)),
+          //   textAlign: TextAlign.center,
+          // ),
         ],
       ),
     ),
   );
 }
+
+
+          
