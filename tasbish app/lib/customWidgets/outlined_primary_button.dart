@@ -36,7 +36,7 @@ class OutlinedPrimaryButton extends StatelessWidget {
         onPressed:onPressed,
         child: Text(
           buttonName ?? " ",
-          style: TextStyle(color: textButtonColor ,fontSize: fontSize ?? 16,fontWeight: FontWeight.bold),
+          style: TextStyle(color: textButtonColor ,fontSize: fontSize ?? 22,fontWeight: FontWeight.bold),
         ),
         );
   }

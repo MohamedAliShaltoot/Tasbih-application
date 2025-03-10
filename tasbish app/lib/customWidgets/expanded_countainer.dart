@@ -11,7 +11,7 @@ Expanded ExpandedCountainerWidget(String textLabel, int counter) {
     flex: 2,
     child: Container(
       
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 10),
       decoration: BoxDecoration(
         border: Border.all(color: const Color.fromARGB(255, 16, 95, 140)),
         color: const Color.fromARGB(255, 91, 19, 4),
@@ -27,7 +27,7 @@ Expanded ExpandedCountainerWidget(String textLabel, int counter) {
           ),
 
            AnimatedFlipCounter(
-           textStyle: const TextStyle(fontSize: 27),
+           textStyle: const TextStyle(fontSize: 25),
             value: counter,
             duration: const Duration(seconds: 1),
             curve: Curves.linear,
