@@ -1,63 +1,50 @@
-import 'package:flutter/material.dart';
-//import 'package:provider/provider.dart';
-class IncrementCountersProvider with ChangeNotifier{
-
- int sobhan = 0;
-  int alhamd = 0;
-  int laaaelaha = 0;
-  int alla = 0;
-
- get showSobhan=>sobhan;
-
-   incrementsobhan() {
-      sobhan++;
-      notifyListeners();
-  }
+// // ignore: depend_on_referenced_packages
+// // مهم لتجنب المشاكل
 
 
-get showalhamd=>alhamd;
+// // حالات الكيوبت
+// class TasbihState {
+//   final int sobhan;
+//   final int alhamd;
+//   final int laaaelaha;
+//   final int alla;
 
-   incrementalhamd() {
-     alhamd++;
-      notifyListeners();
-  }
+//   TasbihState({
+//     required this.sobhan,
+//     required this.alhamd,
+//     required this.laaaelaha,
+//     required this.alla,
+//   });
 
-  get showlaaaelaha=>laaaelaha;
+//   // نسخ الحالة مع تغيير قيمة واحدة فقط
+//   TasbihState copyWith({
+//     int? sobhan,
+//     int? alhamd,
+//     int? laaaelaha,
+//     int? alla,
+//   }) {
+//     return TasbihState(
+//       sobhan: sobhan ?? this.sobhan,
+//       alhamd: alhamd ?? this.alhamd,
+//       laaaelaha: laaaelaha ?? this.laaaelaha,
+//       alla: alla ?? this.alla,
+//     );
+//   }
+// }
 
-   incrementlaaaelaha() {
-      laaaelaha++;
-      notifyListeners();
-  }
+// // كلاس الكيوبت لإدارة الحالات
+// class TasbihCubit extends Cubit<TasbihState> {
+//   TasbihCubit()
+//       : super(TasbihState(sobhan: 0, alhamd: 0, laaaelaha: 0, alla: 0));
 
-  get showalla=>sobhan;
+//   void incrementSobhan() => emit(state.copyWith(sobhan: state.sobhan + 1));
+//   void incrementAlhamd() => emit(state.copyWith(alhamd: state.alhamd + 1));
+//   void incrementLaaaelaha() =>
+//       emit(state.copyWith(laaaelaha: state.laaaelaha + 1));
+//   void incrementAlla() => emit(state.copyWith(alla: state.alla + 1));
 
-   incrementalla() {
-      alla++;
-      notifyListeners();
-  }
-
-
-setVariables(){
-   sobhan = 0;
-  alhamd = 0;
-  laaaelaha = 0;
- alla = 0;
-  notifyListeners();
-
-}
-
-
-
-
-
-
-
-
-
-
-
+//   void reset() =>
+//       emit(TasbihState(sobhan: 0, alhamd: 0, laaaelaha: 0, alla: 0));
+// }
 
 
-
-  
-}

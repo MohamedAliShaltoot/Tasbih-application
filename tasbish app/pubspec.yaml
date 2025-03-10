@@ -33,8 +33,12 @@ dependencies:
   animated_flip_counter: ^0.3.4
  
   provider: ^6.1.2
+  flutter_bloc: ^8.1.6
+  
+
   flutter:
     sdk: flutter
+  equatable: ^2.0.7
 
 dev_dependencies:
 

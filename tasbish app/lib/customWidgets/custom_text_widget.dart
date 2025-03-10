@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
+
 
 class CustomTextWidget extends StatelessWidget {
   const CustomTextWidget({
@@ -11,7 +11,16 @@ class CustomTextWidget extends StatelessWidget {
   final double? fontsize;
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
+    return Text(
+      label,
+      style: TextStyle(color: const Color.fromARGB(255, 242, 241, 238), fontSize: fontsize),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+/*
+Shimmer.fromColors(
       baseColor: Colors.red,
     highlightColor: Colors.yellow,
       child: Text(
@@ -20,5 +29,5 @@ class CustomTextWidget extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
     );
-  }
-}
+
+*/

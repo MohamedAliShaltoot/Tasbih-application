@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             SizedBox(
               width: 200,
               height: 200,
-              child:Image.asset("assets/images/images.png"),
+              child:Image.asset("tasbish app/assets/images/ic_sebha.png"),
               
               
               )

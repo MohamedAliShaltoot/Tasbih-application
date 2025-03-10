@@ -4,12 +4,13 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
 import 'package:flutter_application_1/customWidgets/expanded_countainer.dart';
-//import 'package:flutter_application_1/show_dialog.dart';
-import 'package:flutter_application_1/show_snack_bar.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:flutter_application_1/customWidgets/outlined_primary_button.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.onToggle});
+  final Function? onToggle;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,10 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int alhamd = 0;
   int laaaelaha = 0;
   int alla = 0;
-  
 
-
-  
   @override
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.sizeOf(context).width;
@@ -35,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 40,
           splashColor: Colors.orange,
           focusColor: Colors.green,
-         // hoverColor: const Color.fromARGB(255, 2, 238, 69),
+          // hoverColor: const Color.fromARGB(255, 2, 238, 69),
           tooltip: "Rest Counters",
           backgroundColor: Colors.amber,
           onPressed: () {
@@ -52,40 +50,36 @@ class _HomeScreenState extends State<HomeScreen> {
             fontsize: 20,
           )),
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        //backgroundColor: Colors.orange,
         title: InkWell(
-          onTap: () { 
-AwesomeDialog(
-            context: context,
-            dialogType: DialogType.info,
-            animType: AnimType.rightSlide,
-            title: 'Dialog Title',
-            desc: 'My name is Mohamed Ali "The Developer" ',
-            btnCancelOnPress: () {},
-            btnOkOnPress: () {},
+          onTap: () {
+            AwesomeDialog(
+              context: context,
+              dialogType: DialogType.info,
+              animType: AnimType.rightSlide,
+              title: 'Dialog Title',
+              desc: 'My name is Mohamed Ali "The Developer" ',
+              btnCancelOnPress: () {},
+              btnOkOnPress: () {},
             ).show();
 
-
-            
             //showAlertDialog(context); ----> add package instead of this
-             },
-          child: Shimmer.fromColors(
-            period: const Duration(seconds: 4),
-             baseColor: const Color.fromARGB(255, 31, 28, 28),
-              highlightColor: const Color.fromARGB(255, 138, 124, 5),
-            child: const Text(
-              "Tasbih app",
-              style: TextStyle( fontSize: 30),
-            ),
+          },
+          child: const Text(
+            "Tasbih app",
+            style: TextStyle(fontSize: 30),
           ),
         ),
         actions: [
           IconButton(
             onPressed: () {
-              final snakBar = ShowSnackBar(context);
-              ScaffoldMessenger.of(context).showSnackBar(snakBar);
+              setState(() {
+                widget.onToggle!();
+              });
+              // final snakBar = ShowSnackBar(context);
+              // ScaffoldMessenger.of(context).showSnackBar(snakBar);
             },
-            icon: const Icon(Icons.menu),
+            icon: const Icon(Icons.brightness_6_outlined),
           )
         ],
       ),
@@ -100,7 +94,6 @@ AwesomeDialog(
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  
                   ExpandedCountainerWidget("سبحان الله", sobhan),
                   ExpandedCountainerWidget("الحمد لله", alhamd),
                   ExpandedCountainerWidget("لا اله الاالله", laaaelaha),
@@ -111,77 +104,68 @@ AwesomeDialog(
                 height: 120,
               ),
 
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(
-                      Color.fromARGB(255, 227, 169, 70)),
-                ),
+              OutlinedPrimaryButton(
+                buttonName: "سبحان الله",
+                textButtonColor: const Color.fromARGB(255, 234, 232, 232),
+                buttonBorderColor: const Color(0xFFDB3022),
                 onPressed: () {
                   setState(() {});
                   sobhan++;
                 },
-                child: const CustomBottonTextWIdget(
-                  text: "سبحان الله",
-                  color: Color.fromARGB(255, 19, 13, 2),
-                  fontsize: 30,
-                ),
+                borderButtonRadius: 25,
               ),
-              
+
               const SizedBox(
                 height: 25,
               ),
               // CustomElevatedButton(alhamd,"الحمد لله"),
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(
-                      Color.fromARGB(255, 227, 169, 70)),
-                ),
+
+              OutlinedPrimaryButton(
+                buttonName: "الحمد لله",
+                textButtonColor: const Color.fromARGB(255, 234, 232, 232),
+                buttonBorderColor: const Color(0xFFDB3022),
                 onPressed: () {
                   setState(() {});
                   alhamd++;
                 },
-                child: const CustomBottonTextWIdget(
-                  text: "الحمد لله",
-                  color: Color.fromARGB(255, 19, 13, 2),
-                  fontsize: 30,
-                ),
+                borderButtonRadius: 25,
               ),
+
               const SizedBox(
                 height: 25,
               ),
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(
-                      Color.fromARGB(255, 227, 169, 70)),
-                ),
+
+              OutlinedPrimaryButton(
+                buttonName: " لا اله الا الله",
+                textButtonColor: const Color.fromARGB(255, 234, 232, 232),
+                buttonBorderColor: const Color(0xFFDB3022),
                 onPressed: () {
                   setState(() {});
                   laaaelaha++;
                 },
-                child: const CustomBottonTextWIdget(
-                  text: " لا اله الا الله",
-                  color: Color.fromARGB(255, 19, 13, 2),
-                  fontsize: 30,
-                ),
+                borderButtonRadius: 25,
               ),
+
               const SizedBox(
                 height: 25,
               ),
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(
-                      Color.fromARGB(255, 227, 169, 70)),
-                ),
+
+              OutlinedPrimaryButton(
+                buttonName: "  الله أكبر",
+                textButtonColor: const Color.fromARGB(255, 234, 232, 232),
+                buttonBorderColor: const Color(0xFFDB3022),
                 onPressed: () {
                   setState(() {});
                   alla++;
                 },
-                child: const CustomBottonTextWIdget(
-                  text: "  الله أكبر",
-                  color: Color.fromARGB(255, 19, 13, 2),
-                  fontsize: 30,
-                ),
+                borderButtonRadius: 25,
               ),
+
+              const SizedBox(
+                height: 25,
+              ),
+
+              
             ],
           ),
         ),
@@ -209,3 +193,105 @@ AwesomeDialog(
     );
   }
 }
+
+
+/*
+
+ Shimmer.fromColors(
+            period: const Duration(seconds: 4),
+             baseColor: const Color.fromARGB(255, 31, 28, 28),
+              highlightColor: const Color.fromARGB(255, 138, 124, 5),
+            child: const Text(
+              "Tasbih app",
+              style: TextStyle( fontSize: 30),
+            ),
+          ),
+
+
+
+===
+  ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
+                ),
+                onPressed: () {
+                  setState(() {});
+                  alla++;
+                },
+                child: const CustomBottonTextWIdget(
+                  text: "  الله أكبر",
+                  color: Color.fromARGB(255, 19, 13, 2),
+                  fontsize: 30,
+                ),
+              ),
+
+
+
+ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
+                ),
+                onPressed: () {
+                  setState(() {});
+                  laaaelaha++;
+                },
+                child: const CustomBottonTextWIdget(
+                  text: " لا اله الا الله",
+                  color: Color.fromARGB(255, 19, 13, 2),
+                  fontsize: 30,
+                ),
+              ),
+
+
+
+
+
+ ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
+                ),
+                onPressed: () {
+                  setState(() {});
+                  alhamd++;
+                },
+                child: const CustomBottonTextWIdget(
+                  text: "الحمد لله",
+                  color: Color.fromARGB(255, 19, 13, 2),
+                  fontsize: 30,
+                ),
+              ),
+
+
+
+ ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll<Color>(
+                      Color.fromARGB(255, 227, 169, 70)),
+                ),
+                onPressed: () {
+                  setState(() {});
+                  sobhan++;
+                },
+                child: const CustomBottonTextWIdget(
+                  text: "سبحان الله",
+                  color: Color.fromARGB(255, 19, 13, 2),
+                  fontsize: 30,
+                ),
+              ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
