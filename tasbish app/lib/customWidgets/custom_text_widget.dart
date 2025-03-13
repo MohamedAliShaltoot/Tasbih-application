@@ -5,7 +5,7 @@ class CustomTextWidget extends StatelessWidget {
   const CustomTextWidget({
     super.key,
     required this.label,
-    this.fontsize = 20,
+    this.fontsize = 20, required FontWeight fontWeight,
   });
   final String label;
   final double? fontsize;

@@ -1,66 +1,55 @@
 import 'package:flutter/material.dart';
 
-
 class AppTheme {
   /// 🌞 **Light Theme**
   static final ThemeData lightTheme = ThemeData(
-    primaryTextTheme: const TextTheme(
-      bodyMedium: TextStyle(color: Color.fromARGB(255, 229, 235, 227),),
-    
-
-    ),
-    
     brightness: Brightness.light,
-    colorScheme: const ColorScheme.light(
-      primary: Color(0xFF6C63FF), // Beautiful Indigo
-      secondary: Color(0xFFFF8C00), // Orange Accent
-      //background: Color(0xFFF7F7F7), // Light Grey Background
-     // surface: Colors.white,
-     // onPrimary: Colors.white,
-      onSecondary: Colors.black,
-      //onBackground: Colors.black,
-      onSurface: Color.fromARGB(255, 12, 11, 26),
-    ),
+    primaryColor: const Color.fromARGB(45, 171, 8, 8), // لون الأزرار الرئيسية في الوضع الفاتح
+    scaffoldBackgroundColor:
+        const Color.fromARGB(255, 4, 57, 82), // خلفية التطبيق في الوضع الفاتح
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 11, 98, 179), // Same as primary
+      backgroundColor:
+          Color.fromARGB(255, 66, 95, 175), // لون الـ AppBar في الوضع الفاتح
       elevation: 0,
-      //iconTheme: IconThemeData(color: Colors.white),
-      titleTextStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
+      iconTheme:
+          IconThemeData(color: Color.fromARGB(255, 17, 17, 17)), // لون الأيقونات في الوضع الفاتح
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.white, // لون الأزرار الرئيسية في الوضع الفاتح
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(
+            color: Colors.white), // لون حدود الأزرار في الوضع الفاتح
       ),
     ),
-    scaffoldBackgroundColor: const Color(0xFFF7F7F7),
-    //textTheme: _textTheme,
+    iconTheme: const IconThemeData(
+        color: Colors.white), // لون الأيقونات في الوضع الفاتح
   );
 
   /// 🌙 **Dark Theme**
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    colorScheme: const ColorScheme.dark(
-      primary: Color(0xFFBB86FC), // Soft Purple
-      secondary: Color(0xFFFFA726), // Warm Orange
-     // background: Color(0xFF121212), // True Black Background
-      surface: Color(0xFF1E1E1E), // Darker Surface
-      onPrimary: Colors.black,
-      onSecondary: Colors.black,
-      //onBackground: Colors.white,
-     // onSurface: Colors.white,
-    ),
+    // primaryColor: const Color.fromARGB(
+    //     255, 181, 17, 17), // لون الأزرار الرئيسية في الوضع الداكن
+    scaffoldBackgroundColor:
+        const Color.fromARGB(255, 2, 66, 78), // خلفية التطبيق في الوضع الداكن
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 10, 55, 117),
-      elevation: 3,
-     // iconTheme: IconThemeData(color: Colors.white),
-      titleTextStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
+      backgroundColor: Color.fromARGB(255, 1, 3, 2), // لون الـ AppBar في الوضع الداكن
+      elevation: 0,
+      iconTheme:
+          IconThemeData(color: Color.fromARGB(255, 240, 238, 238)), // لون الأيقونات في الوضع الداكن
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.black, // لون الأزرار الرئيسية في الوضع الداكن
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(
+            color: Color.fromARGB(255, 20, 20, 20)), // لون حدود الأزرار في الوضع الداكن
       ),
     ),
-    scaffoldBackgroundColor: const Color(0xFF121212),
-    //textTheme: _textTheme,
+    // iconTheme: const IconThemeData(
+    //     color: Colors.black), // لون الأيقونات في الوضع الداكن
   );
-
-  
 }

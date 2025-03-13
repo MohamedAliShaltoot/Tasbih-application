@@ -29,7 +29,7 @@ class OutlinedPrimaryButton extends StatelessWidget {
          elevation: 10,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderButtonRadius ?? 8),
-            side: BorderSide(color:buttonBorderColor!,width: 10),
+            side: BorderSide(color:buttonBorderColor ?? Colors.white,width: 10),
           ),
           fixedSize: Size(width ?? 250, height ?? 56),
         ),
