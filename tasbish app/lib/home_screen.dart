@@ -45,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (isFirstLaunch) {
       Future.delayed(const Duration(milliseconds: 500), () {
         AwesomeDialog(
+          // ignore: use_build_context_synchronously
           context: context,
           dialogType: DialogType.info,
           animType: AnimType.scale,

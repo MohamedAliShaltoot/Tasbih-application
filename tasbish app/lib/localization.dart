@@ -33,6 +33,8 @@ class LocalizationService {
         'continue': 'Continue',
         'reset': 'Reset ',
         'toggleLanguage': 'Change Language',
+        "welcome": "Welcome",
+        "welcomeMessage": "Wlecome to Tasbiha, Please tap on the start button to start the app",
       },
       'ar': {
         'appTitle': 'تسبيحة',
@@ -45,6 +47,9 @@ class LocalizationService {
         'continue': 'متابعة',
         'reset': 'تصفير',
         'toggleLanguage': 'تغيير اللغة',
+        "welcome": "مرحبا",
+        "welcomeMessage":
+            "مرحبا بك في التسبيحة، يرجى الضغط على زر التشغيل لبدء التطبيق",
       }
     };
 
