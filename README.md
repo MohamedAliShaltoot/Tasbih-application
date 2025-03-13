@@ -4,7 +4,7 @@ Tasbiha is a Flutter-based app for tracking your Tasbih count.
 
 ## 📸 Screenshots
 ### 🌞 Light Mode
-![Light Mode](assets/screenshots/light_mode.png)
+![Light Mode](assets/images/arb_light_mode.jpg)
 
 ### 🌙 Dark Mode
-![Dark Mode](assets/screenshots/dark_mode.png)
+![Dark Mode](assets/images/eng_dark_mode.jpg)
