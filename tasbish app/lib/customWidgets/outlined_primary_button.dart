@@ -26,12 +26,12 @@ class OutlinedPrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
-         
+         elevation: 10,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderButtonRadius ?? 8),
-            side: BorderSide(color:buttonBorderColor!,width: 2),
+            side: BorderSide(color:buttonBorderColor!,width: 10),
           ),
-          fixedSize: Size(width ?? 200, height ?? 56),
+          fixedSize: Size(width ?? 250, height ?? 56),
         ),
         onPressed:onPressed,
         child: Text(

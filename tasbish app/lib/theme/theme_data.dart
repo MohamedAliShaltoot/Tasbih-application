@@ -22,7 +22,7 @@ class AppTheme {
       onSurface: Color.fromARGB(255, 12, 11, 26),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 12, 11, 26), // Same as primary
+      backgroundColor: Color.fromARGB(255, 11, 98, 179), // Same as primary
       elevation: 0,
       //iconTheme: IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(

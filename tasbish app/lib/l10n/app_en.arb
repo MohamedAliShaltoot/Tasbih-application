@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "app_title": "Tasbiha App",
+  "counter_reset": "Reset / Clear Count",
+  "switch_theme": "Switch Theme",
+  "switch_view": "Toggle View",
+  "welcome_message": "👋 Welcome! This is your Tasbih counter.",
+  "congratulations": "🎉 Congratulations!",
+  "reached_count": "You have reached {count} for {tasbih}!",
+  "start_now": "Start Now",
+  "ok": "OK"
+}

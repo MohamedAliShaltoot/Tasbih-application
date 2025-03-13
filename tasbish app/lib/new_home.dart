@@ -1,8 +1,9 @@
 // ignore_for_file: deprecated_member_use
 import 'dart:ui';
+import 'package:Tasbiha/customWidgets/custom_button_text_widget.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/customWidgets/custom_button_text_widget.dart';
+
 
 class NewHomeScreen extends StatefulWidget {
   const NewHomeScreen({super.key, this.onToggle});

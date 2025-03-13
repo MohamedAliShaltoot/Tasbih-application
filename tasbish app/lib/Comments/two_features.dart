@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen(
-      {super.key, this.onToggle, required void Function() onToggleLocale});
+  const HomeScreen({super.key, this.onToggle});
   final Function? onToggle;
 
   @override
@@ -36,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
     if (isFirstLaunch) {
       Future.delayed(const Duration(milliseconds: 500), () {
         AwesomeDialog(
-          // ignore: use_build_context_synchronously
           context: context,
           dialogType: DialogType.info,
           animType: AnimType.scale,
@@ -53,10 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadCounters() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      sobhan = prefs.getInt('sobhan allah') ?? 0;
-      alhamd = prefs.getInt('alhamd lillah') ?? 0;
-      laaaelaha = prefs.getInt('laaaelaha ela allah') ?? 0;
-      alla = prefs.getInt('alla akbar') ?? 0;
+      sobhan = prefs.getInt('sobhan') ?? 0;
+      alhamd = prefs.getInt('alhamd') ?? 0;
+      laaaelaha = prefs.getInt('laaaelaha') ?? 0;
+      alla = prefs.getInt('alla') ?? 0;
     });
   }
 
@@ -79,30 +77,30 @@ class _HomeScreenState extends State<HomeScreen> {
   void _incrementCounter(String key) {
     setState(() {
       switch (key) {
-        case 'sobhan allah':
+        case 'sobhan':
           sobhan++;
           break;
-        case 'alhamd lillah':
+        case 'alhamd':
           alhamd++;
           break;
-        case 'laaaelaha ela allah':
+        case 'laaaelaha':
           laaaelaha++;
           break;
-        case 'alla akbar':
+        case 'alla':
           alla++;
           break;
       }
       _updateCounter(key, _getCounterValue(key));
     });
 
-    Future.delayed(const Duration(microseconds: 10), () {
+    Future.delayed(const Duration(milliseconds: 250), () {
       _showDialogIfNeeded(_getCounterValue(key), key);
     });
   }
 
   void _showDialogIfNeeded(int value, String text) {
     if (value % 100 == 0) {
-      Future.delayed(const Duration(seconds: 1), () {
+      Future.delayed(const Duration(milliseconds: 300), () {
         AwesomeDialog(
           // ignore: use_build_context_synchronously
           context: context,
@@ -123,13 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _getCounterValue(String key) {
     switch (key) {
-      case 'sobhan allah':
+      case 'sobhan':
         return sobhan;
-      case 'alhamd lillah':
+      case 'alhamd':
         return alhamd;
-      case 'laaaelaha ela allah':
+      case 'laaaelaha':
         return laaaelaha;
-      case 'alla akbar':
+      case 'alla':
         return alla;
       default:
         return 0;
@@ -137,16 +135,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  // ignore: non_constant_identifier_names
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.sizeOf(context).width;
     double heightScreen = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
       appBar: AppBar(
-        title: 
-        Text("Tasbiha", style: TextStyle(fontSize: 30)),
-
+        title: const Text("Tasbiha", style: TextStyle(fontSize: 30)),
         actions: [
           IconButton(
             onPressed: () => widget.onToggle!(),
@@ -254,13 +249,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               const SizedBox(height: 40),
-              _buildTasbihButton("سبحان الله", "sobhan allah"),
+              _buildTasbihButton("سبحان الله", "sobhan"),
               const SizedBox(height: 15),
-              _buildTasbihButton("الحمد لله", "alhamd lillah"),
+              _buildTasbihButton("الحمد لله", "alhamd"),
               const SizedBox(height: 15),
-              _buildTasbihButton("لا إله إلا الله", "laaaelaha ela allah"),
+              _buildTasbihButton("لا إله إلا الله", "laaaelaha"),
               const SizedBox(height: 15),
-              _buildTasbihButton("الله أكبر", "alla akbar"),
+              _buildTasbihButton("الله أكبر", "alla"),
               const SizedBox(height: 55),
               CustomPrimaryButton(
                 buttonName: "Reset / تصفير",

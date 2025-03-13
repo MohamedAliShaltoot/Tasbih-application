@@ -30,14 +30,14 @@ class CustomPrimaryButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderButtonRadius ?? 8),
         ),
-        fixedSize: Size(width ?? 200, height ?? 56),
+        fixedSize: Size(width ?? 300, height ?? 56),
       ),
       onPressed: onPressed,
       child: Text(
         buttonName ?? " ",
         style: TextStyle(
             color: textButtonColor ,
-            fontSize: fontSize ?? 16,
+            fontSize: fontSize ?? 19,
             fontWeight: FontWeight.bold),
       ),
     );

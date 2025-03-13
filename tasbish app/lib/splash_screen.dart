@@ -1,6 +1,7 @@
+import 'package:Tasbiha/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/home_screen.dart';
+
 
 
 
@@ -19,9 +20,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
-       Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return const HomeScreen();
-                    }));
+      //  Navigator.push(context, MaterialPageRoute(builder: (context){
+      //                 return const HomeScreen();
+      //               }));
       }
     });
   }
